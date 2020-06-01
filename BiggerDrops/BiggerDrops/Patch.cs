@@ -203,22 +203,37 @@ namespace BiggerDrops {
                 }
                 if (BiggerDrops.settings.count4AsUnlimited)
                 {
-                    if (BiggerDrops.settings.respectFourDropLimit)
+                    if (!BiggerDrops.settings.respectFourDropLimit)
                     {
-                        if ((contract.Override.maxNumberOfPlayerUnits != -1) || (contract.Override.maxNumberOfPlayerUnits != 4))
+                        if (contract.Override.maxNumberOfPlayerUnits != -1 && contract.Override.maxNumberOfPlayerUnits != 4)
                         {
                             maxUnits = contract.Override.maxNumberOfPlayerUnits;
                         }
                     }
-                else
-                {
-                    if (contract.Override.maxNumberOfPlayerUnits != -1)
+                    else
                     {
-                        maxUnits = contract.Override.maxNumberOfPlayerUnits;
+                        if (contract.Override.maxNumberOfPlayerUnits != -1)
+                        {
+                            maxUnits = contract.Override.maxNumberOfPlayerUnits;
+                        }
                     }
                 }
-                }
-                    }
+                else
+                        {
+                            if (BiggerDrops.settings.respectFourDropLimit)
+                            {
+                                if (contract.Override.maxNumberOfPlayerUnits != -1)
+                                {
+                                    maxUnits = contract.Override.maxNumberOfPlayerUnits;
+                                }
+                            }
+                            else
+                            {
+                                maxUnits = contract.Override.maxNumberOfPlayerUnits;
+                            }
+                        }
+                
+            }
          } else {
           maxUnits = Settings.MAX_ADDITINAL_MECH_SLOTS + Settings.MAX_ADDITINAL_MECH_SLOTS;
           BiggerDrops.baysAlreadyAdded = 0;
