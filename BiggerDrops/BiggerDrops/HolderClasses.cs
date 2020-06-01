@@ -34,7 +34,6 @@ namespace BiggerDrops {
     public bool limitFlashpointDrop {get; set;}
     public bool count4AsUnlimited {get; set;}
 
-
   public int additinalMechSlots {
       get {
         if (allowUpgrades && companyStats != null)
@@ -138,8 +137,7 @@ namespace BiggerDrops {
     public void UpdateCULances() {
       if (CustomUnitsAPI.Detected()) {
         int lanceCount = 1;
-        int mCount = BiggerDrops.
-                    .additinalMechSlots;
+        int mCount = BiggerDrops.settings.additinalMechSlots;
         while (mCount > 0)
         {
             lanceCount++;
