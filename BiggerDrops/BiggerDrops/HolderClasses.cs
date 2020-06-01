@@ -32,9 +32,10 @@ namespace BiggerDrops {
     public int CuInitialVehicles { get; set; }
     public bool respectFourDropLimit {get; set;}
     public bool limitFlashpointDrop {get; set;}
+    public bool count4AsUnlimited {get; set;}
 
 
-    public int additinalMechSlots {
+  public int additinalMechSlots {
       get {
         if (allowUpgrades && companyStats != null)
         {
@@ -131,12 +132,14 @@ namespace BiggerDrops {
       CuInitialVehicles = 0;
       limitFlashpointDrop = true;
       respectFourDropLimit = false;
+      count4AsUnlimited = true;
     }
     
     public void UpdateCULances() {
       if (CustomUnitsAPI.Detected()) {
         int lanceCount = 1;
-        int mCount = BiggerDrops.settings.additinalMechSlots;
+        int mCount = BiggerDrops.
+                    .additinalMechSlots;
         while (mCount > 0)
         {
             lanceCount++;
