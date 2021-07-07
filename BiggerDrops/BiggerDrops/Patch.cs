@@ -235,7 +235,7 @@ namespace BiggerDrops {
           //__instance.lanceMaxTonnage = BiggerDrops.settings.defaultMaxTonnage;
           return;
         } else
-        if (contract.Override.lanceMaxTonnage == -1) {
+        if (contract.Override.lanceMaxTonnage == -1 && !contract.IsFlashpointCampaignContract && !contract.IsFlashpointContract) {
           __instance.lanceMaxTonnage = BiggerDrops.settings.defaultMaxTonnage;
         }
       } catch (Exception e) {
